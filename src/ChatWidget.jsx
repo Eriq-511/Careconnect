@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SockJS from 'sockjs-client';
-import { over } from '@stomp/stompjs';
+import * as Stomp from '@stomp/stompjs';
 import { useAuthStore } from './stores/authStore';
 import MessageBubble from './components/MessageBubble';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -20,7 +20,7 @@ export default function ChatWidget() {
   useEffect(() => {
     setLoading(true);
     const socket = new SockJS(SOCKET_URL);
-    stompClient.current = over(socket);
+    stompClient.current = Stomp.over(socket);
     stompClient.current.connect({}, () => {
       stompClient.current.subscribe(MESSAGE_TOPIC, (msg) => {
         const message = JSON.parse(msg.body);

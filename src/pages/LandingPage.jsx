@@ -54,12 +54,12 @@ export default function LandingPage() {
           <h3 className="text-2xl font-bold mb-4 text-primary-900">Featured Babysitters</h3>
           <div className="flex flex-wrap gap-6 justify-center">
             <div className="bg-white rounded-lg shadow p-4 w-48">
-              <img src="/avatar1.png" alt="Sitter 1" className="w-16 h-16 rounded-full mx-auto mb-2" />
+              <img src="/avatar1.jpg" alt="Sitter 1" className="w-16 h-16 rounded-full mx-auto mb-2" />
               <div className="font-semibold text-primary-800">Jessica R.</div>
               <div className="text-primary-600 text-sm">5 yrs exp • CPR Cert.</div>
             </div>
             <div className="bg-white rounded-lg shadow p-4 w-48">
-              <img src="/avatar2.png" alt="Sitter 2" className="w-16 h-16 rounded-full mx-auto mb-2" />
+              <img src="/avatar2.jpg" alt="Sitter 2" className="w-16 h-16 rounded-full mx-auto mb-2" />
               <div className="font-semibold text-primary-800">Megan T.</div>
               <div className="text-primary-600 text-sm">3 yrs exp • Early Ed.</div>
             </div>
