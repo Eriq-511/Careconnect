@@ -18,7 +18,7 @@ export default function LandingPage() {
         <Link to="/" className="logo flex items-center gap-2 no-underline">
           <div className="logo-mark w-[38px] h-[38px] rounded-[12px] bg-gradient-to-br from-primary-700 to-primary-500 flex items-center justify-center font-display font-bold text-white text-[16px] tracking-[-0.5px]">CC</div>
           <span className="logo-text font-display text-[1.2rem] font-semibold text-primary-800">CareConnect</span>
-        </a>
+        </Link>
         <ul className="nav-links flex items-center gap-7 list-none">
           <li><a href="#how" className="text-[0.875rem] font-medium text-warm-700 no-underline transition-colors hover:text-primary-600">How It Works</a></li>
           <li><Link to="/about" className="text-[0.875rem] font-medium text-warm-700 no-underline transition-colors hover:text-primary-600">About</Link></li>
