@@ -4,11 +4,7 @@ import { useAuthStore } from '../stores/authStore';
 import Button from './ui/Button';
 import clsx from 'clsx';
 
-const NAV_LINKS = [
-  { label: 'How It Works', href: '/#how-it-works' },
-  { label: 'About', href: '/about' },
-  { label: 'Safety', href: '/#safety' },
-];
+const NAV_LINKS = [];
 
 export default function Navbar() {
   const user = useAuthStore((s) => s.user);
@@ -48,21 +44,8 @@ export default function Navbar() {
           </div>
           <span className="font-display text-xl font-semibold text-teal-800">CareConnect</span>
         </Link>
-        {/* Desktop nav links */}
-        <div className="hidden md:flex gap-8 items-center">
-          {NAV_LINKS.map(link => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-warm-700 hover:text-teal-700 transition"
-            >
-              {link.label}
-            </a>
-          ))}
-          {dashboardLink && (
-            <Link to={dashboardLink} className="text-sm font-medium text-warm-700 hover:text-teal-700 transition">Dashboard</Link>
-          )}
-        </div>
+        {/* Desktop nav links intentionally left empty for landing page */}
+        <div className="hidden md:flex gap-8 items-center"></div>
         {/* CTAs */}
         <div className="hidden md:flex gap-3 items-center">
           {user ? (
@@ -95,16 +78,6 @@ export default function Navbar() {
               ×
             </button>
             <nav className="flex flex-col gap-8 text-center">
-              {NAV_LINKS.map(link => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-lg font-semibold text-white hover:text-teal-400 transition"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
               {dashboardLink && (
                 <Link to={dashboardLink} className="text-lg font-semibold text-white hover:text-teal-400 transition" onClick={() => setMobileOpen(false)}>Dashboard</Link>
               )}

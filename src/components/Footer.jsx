@@ -8,8 +8,6 @@ const PLATFORM = [
 ];
 const COMPANY = [
   { label: 'About Us', to: '/about' },
-  // Safety section anchor only if it exists on landing page, else remove or comment out
-  // { label: 'Safety', to: '/#safety' },
   { label: 'Contact', to: '/contact' },
 ];
 const LEGAL = [
