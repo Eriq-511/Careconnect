@@ -37,7 +37,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/upload" element={<FileUploadPage />} />
-        <Route path="/messages" element={<MessagesPage />} />
+        <Route path="/messages" element={<><MessagesPage /><ChatWidget /></>} />
         <Route path="/directory" element={<DirectoryPage />} />
         <Route path="/babysitters" element={<BabysitterDirectory />} />
         <Route path="/admin/dashboard" element={
@@ -59,7 +59,6 @@ function App() {
         } />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ChatWidget />
       <Footer />
     </Router>
   );
