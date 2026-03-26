@@ -288,38 +288,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className="bg-warm-900 pt-12 pb-8 px-[5%] mt-16 text-white/60">
-        <div className="footer-inner max-w-[1100px] mx-auto">
-          <div className="footer-top flex flex-col md:flex-row justify-between mb-10 gap-8">
-            <div className="footer-brand max-w-[280px]">
-              <div className="footer-logo font-display text-[1.3rem] font-bold text-white mb-3">CareConnect</div>
-              <p className="footer-desc text-[0.83rem] leading-[1.6]">Connecting families with trusted, admin-verified babysitters for safe, reliable care.</p>
-            </div>
-            <div className="footer-col">
-              <h4 className="text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white/90 mb-4">Platform</h4>
-              <a href="#how" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">How It Works</a>
-              <Link to="/directory" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Browse Sitters</Link>
-              <Link to="/signup" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Become a Sitter</Link>
-              <Link to="/admin/dashboard" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Admin Login</Link>
-            </div>
-            <div className="footer-col">
-              <h4 className="text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white/90 mb-4">Company</h4>
-              <Link to="/about" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">About Us</Link>
-              <Link to="/contact" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Contact</Link>
-            </div>
-            <div className="footer-col">
-              <h4 className="text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white/90 mb-4">Legal</h4>
-              <Link to="/terms" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Terms of Service</Link>
-              <Link to="/privacy" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Privacy Policy</Link>
-            </div>
-          </div>
-          <div className="footer-bottom border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-[0.78rem]">
-            <span>© 2026 CareConnect. All rights reserved.</span>
-            <span>Empowering safe, trusted childcare connections.</span>
-          </div>
-        </div>
-      </footer>
+      {/* FOOTER (global, not duplicated here) */}
     </>
   );
 }
