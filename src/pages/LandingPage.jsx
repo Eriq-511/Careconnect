@@ -13,22 +13,7 @@ export default function LandingPage() {
 
   return (
     <>
-      {/* NAV */}
-      <nav className="sticky top-0 z-50 bg-[rgba(253,250,247,0.92)] backdrop-blur-[12px] border-b border-warm-200 px-[5%] flex items-center justify-between h-[68px]">
-        <Link to="/" className="logo flex items-center gap-2 no-underline">
-          <div className="logo-mark w-[38px] h-[38px] rounded-[12px] bg-gradient-to-br from-primary-700 to-primary-500 flex items-center justify-center font-display font-bold text-white text-[16px] tracking-[-0.5px]">CC</div>
-          <span className="logo-text font-display text-[1.2rem] font-semibold text-primary-800">CareConnect</span>
-        </Link>
-        <ul className="nav-links flex items-center gap-7 list-none">
-          <li><a href="#how" className="text-[0.875rem] font-medium text-warm-700 no-underline transition-colors hover:text-primary-600">How It Works</a></li>
-          <li><Link to="/about" className="text-[0.875rem] font-medium text-warm-700 no-underline transition-colors hover:text-primary-600">About</Link></li>
-          <li><Link to="/safety" className="text-[0.875rem] font-medium text-warm-700 no-underline transition-colors hover:text-primary-600">Safety</Link></li>
-        </ul>
-        <div className="nav-ctas flex gap-2 items-center">
-          <Link to="/login" className="btn-ghost px-4 py-2 border border-warm-200 rounded-[10px] text-[0.875rem] font-medium text-warm-700 bg-transparent cursor-pointer transition-all hover:border-primary-600 hover:text-primary-600">Log In</Link>
-          <Link to="/signup" className="btn-primary px-5 py-2 bg-primary-600 text-white border-none rounded-[10px] text-[0.875rem] font-semibold cursor-pointer transition-all font-body hover:bg-primary-700 hover:-translate-y-0.5 hover:shadow-lg">Get Started</Link>
-        </div>
-      </nav>
+      {/* NAVBAR (global, not duplicated here) */}
       {/* ...existing code... */}
 
       {/* HERO */}
