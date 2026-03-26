@@ -29,6 +29,7 @@ export default function LandingPage() {
           <Link to="/signup" className="btn-primary px-5 py-2 bg-primary-600 text-white border-none rounded-[10px] text-[0.875rem] font-semibold cursor-pointer transition-all font-body hover:bg-primary-700 hover:-translate-y-0.5 hover:shadow-lg">Get Started</Link>
         </div>
       </nav>
+      {/* ...existing code... */}
 
       {/* HERO */}
       <div style={{ background: 'var(--warm-50)', overflow: 'hidden' }}>
@@ -308,7 +309,7 @@ export default function LandingPage() {
           <div className="footer-top flex flex-col md:flex-row justify-between mb-10 gap-8">
             <div className="footer-brand max-w-[280px]">
               <div className="footer-logo font-display text-[1.3rem] font-bold text-white mb-3">CareConnect</div>
-              <p className="footer-desc text-[0.83rem] leading-[1.6]">A trust-first babysitter marketplace connecting families with verified, professional caregivers.</p>
+              <p className="footer-desc text-[0.83rem] leading-[1.6]">Connecting families with trusted, admin-verified babysitters for safe, reliable care.</p>
             </div>
             <div className="footer-col">
               <h4 className="text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white/90 mb-4">Platform</h4>
@@ -320,7 +321,6 @@ export default function LandingPage() {
             <div className="footer-col">
               <h4 className="text-[0.78rem] font-semibold tracking-[0.08em] uppercase text-white/90 mb-4">Company</h4>
               <Link to="/about" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">About Us</Link>
-              <Link to="/safety" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Safety</Link>
               <Link to="/contact" className="block text-[0.83rem] text-white/55 no-underline mb-2 transition-colors hover:text-white">Contact</Link>
             </div>
             <div className="footer-col">
@@ -330,8 +330,8 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="footer-bottom border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-[0.78rem]">
-            <span>© 2025 CareConnect. All rights reserved.</span>
-            <span>Made with care for families everywhere.</span>
+            <span>© 2026 CareConnect. All rights reserved.</span>
+            <span>Empowering safe, trusted childcare connections.</span>
           </div>
         </div>
       </footer>
