@@ -22,21 +22,30 @@ export default function DirectoryPage() {
   }, [filters, page]);
 
   return (
-    <div className="max-w-4xl mx-auto py-12">
-      <h2 className="text-2xl font-bold mb-4">Babysitter Directory</h2>
-      <FilterBar filters={filters} onChange={setFilters} />
+    <div className="max-w-6xl mx-auto py-16 px-4">
+      <h2 className="font-display text-3xl font-bold mb-4 text-warm-900 text-center">Babysitter Directory</h2>
+      <div className="mb-8 flex flex-col md:flex-row gap-4 items-center justify-center">
+        <FilterBar filters={filters} onChange={setFilters} />
+      </div>
       {loading ? <LoadingSpinner /> : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {babysitters.map(bs => (
-            <div key={bs.id} className="bg-white rounded shadow p-4">
-              <div className="font-bold text-lg">{bs.name}</div>
-              <div className="text-primary-600 text-sm">{bs.experience} yrs exp</div>
-              <div className="text-primary-700 text-sm">{bs.certified ? 'Certified' : 'Not certified'}</div>
+            <div key={bs.id} className="bg-white border border-warm-200 rounded-2xl shadow-warm-sm p-6 flex flex-col items-center">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-700 to-teal-400 flex items-center justify-center font-display font-bold text-white text-2xl mb-3">{bs.name[0]}</div>
+              <div className="font-display text-lg font-bold text-warm-900 mb-1">{bs.name}</div>
+              <div className="text-warm-400 text-sm mb-1">{bs.city}</div>
+              <div className="text-warm-700 text-xs mb-2">{bs.experience} yrs experience</div>
+              <div className="flex flex-wrap gap-1 mb-2">
+                {bs.certified && <span className="bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full text-xs font-medium">Certified</span>}
+              </div>
+              <button className="mt-2 bg-teal-600 text-white rounded-xl px-4 py-2 font-semibold hover:bg-teal-700 transition-all">View Profile</button>
             </div>
           ))}
         </div>
       )}
-      <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+      <div className="mt-8 flex justify-center">
+        <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+      </div>
     </div>
   );
 }

@@ -1,16 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+/*
+  CareConnect Design System — Global Styles & Design Tokens
+  - Google Fonts import
+  - CSS variables for color, typography, radii, shadows, transitions
+  - Base body and heading styles
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  /* Primary — Deep Forest Teal */
+  --teal-900: #0D3B38;
+  --teal-800: #134E4A;
+  --teal-700: #1A6B66;
+  --teal-600: #0F766E;
+  --teal-500: #14B8A6;
+  --teal-400: #2DD4BF;
+  --teal-200: #99F6E4;
+  --teal-100: #CCFBF1;
+  --teal-50:  #F0FDFA;
+
+  /* Warm Neutrals */
+  --warm-50:  #FDFAF7;
+  --warm-100: #F5F0E8;
+  --warm-200: #E8DDD0;
+  --warm-400: #A89580;
+  --warm-700: #5C4A3A;
+  --warm-900: #2C1F12;
+
+  /* Accent */
+  --amber:       #F59E0B;
+  --amber-light: #FEF3C7;
+
+  /* Status */
+  --success: #16A34A;
+  --warning: #D97706;
+  --danger:  #DC2626;
+  --info:    #2563EB;
+
+  /* Typography */
   --font-display: 'Lora', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-pill: 100px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 4px rgba(44,31,18,0.06);
+  --shadow-md:  0 4px 16px rgba(44,31,18,0.10);
+  --shadow-lg:  0 16px 48px rgba(44,31,18,0.14);
+  --shadow-cta: 0 4px 20px rgba(15,118,110,0.30);
+
+  /* Transitions */
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--color-bg, #FDFAF7);
+  background: var(--warm-50);
+  color: var(--warm-700);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--warm-900);
 }
 
 /* Custom scrollbar for horizontal nav (responsive polish) */

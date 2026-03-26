@@ -3,7 +3,6 @@ import FileUpload from '../components/FileUpload';
 import { uploadFile } from '../api/api';
 import NotificationBanner from '../components/NotificationBanner';
 
-export default function FileUploadPage() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -27,11 +26,13 @@ export default function FileUploadPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto py-12">
-      <h2 className="text-2xl font-bold mb-4">Upload File</h2>
-      {error && <NotificationBanner message={error} type="error" onClose={() => setError('')} />}
-      {success && <NotificationBanner message={success} type="success" onClose={() => setSuccess('')} />}
-      <FileUpload onUpload={handleUpload} accept="image/png, image/jpeg, application/pdf" maxSize={5 * 1024 * 1024} />
+    <div className="min-h-screen flex items-center justify-center bg-warm-50 px-4 py-12">
+      <div className="w-full max-w-md bg-white border border-warm-200 rounded-2xl shadow-warm-md p-8 md:p-12 mx-auto">
+        <h2 className="font-display text-2xl font-bold mb-6 text-warm-900 text-center">Upload File</h2>
+        {error && <NotificationBanner message={error} type="error" onClose={() => setError('')} />}
+        {success && <NotificationBanner message={success} type="success" onClose={() => setSuccess('')} />}
+        <FileUpload onUpload={handleUpload} accept="image/png, image/jpeg, application/pdf" maxSize={5 * 1024 * 1024} />
+      </div>
     </div>
   );
 }

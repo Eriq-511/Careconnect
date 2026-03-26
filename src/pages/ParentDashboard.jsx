@@ -7,6 +7,21 @@ import LoadingSpinner from '../components/LoadingSpinner';
 export default function ParentDashboard() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  // Dummy stats and data for visual structure
+  const stats = [
+    { label: 'Conversations', value: 5 },
+    { label: 'Sitters Browsed', value: 12 },
+    { label: 'Unread Messages', value: 2 },
+  ];
+  const recentlyViewed = [
+    { id: 'amara1', name: 'Amara O.', city: 'Kampala' },
+    { id: 'patrick2', name: 'Patrick M.', city: 'Entebbe' },
+    { id: 'sarah3', name: 'Sarah K.', city: 'Kampala' },
+  ];
+  const activeConvos = [
+    { id: 1, name: 'Amara O.', last: 'See you at 6pm!', unread: 1 },
+    { id: 2, name: 'Sarah K.', last: 'Thank you!', unread: 0 },
+  ];
 
   useEffect(() => {
     getMe().then(res => setUser(res.data)).finally(() => setLoading(false));
@@ -15,18 +30,70 @@ export default function ParentDashboard() {
   return (
     <>
       <Seo title="Parent Dashboard" description="Manage your parent profile, search babysitters, and view messages." />
-      <div className="max-w-2xl mx-auto py-10 px-2 sm:px-4 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-primary-900">Parent Dashboard</h2>
-        {loading ? <LoadingSpinner /> : user && (
-          <>
-            <div className="mb-4 text-primary-700 text-base sm:text-lg">Welcome, <span className="font-semibold">{user.email}</span></div>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 items-center justify-center">
-              <Link to="/parent/profile" className="w-full sm:w-auto px-4 py-2 bg-primary-600 text-white rounded-lg font-semibold shadow hover:bg-primary-700 transition text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="Edit Profile">Edit Profile</Link>
-              <Link to="/directory" className="w-full sm:w-auto px-4 py-2 bg-secondary-500 text-white rounded-lg font-semibold shadow hover:bg-secondary-600 transition text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-secondary-400" aria-label="Find Babysitters">Find Babysitters</Link>
-              <Link to="/messages" className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold shadow hover:bg-blue-600 transition text-base sm:text-lg focus:outline-none focus:ring-2 focus:ring-blue-400" aria-label="Messages">Messages</Link>
+      <div className="min-h-screen flex bg-warm-50">
+        {/* Sidebar */}
+        <aside className="hidden md:flex flex-col w-60 bg-warm-900 text-white py-8 px-6 min-h-screen justify-between">
+          <div>
+            <div className="font-display text-xl font-bold mb-8">CareConnect</div>
+            <nav className="flex flex-col gap-2">
+              <Link to="/parent/dashboard" className="px-4 py-2 rounded-l-xl bg-teal-600 text-white font-semibold">Home</Link>
+              <Link to="/directory" className="px-4 py-2 rounded-l-xl hover:bg-warm-800 transition">Browse Sitters</Link>
+              <Link to="/messages" className="px-4 py-2 rounded-l-xl hover:bg-warm-800 transition">My Messages</Link>
+              <Link to="/parent/profile" className="px-4 py-2 rounded-l-xl hover:bg-warm-800 transition">My Profile</Link>
+            </nav>
+          </div>
+          <div className="flex items-center gap-3 mt-8">
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-teal-700 to-teal-400 flex items-center justify-center font-display font-bold text-white">{user?.email?.[0]?.toUpperCase() || 'P'}</div>
+            <div>
+              <div className="font-display font-semibold">{user?.email?.split('@')[0]}</div>
+              <div className="text-white/60 text-xs">Parent</div>
             </div>
-          </>
-        )}
+          </div>
+        </aside>
+        {/* Main content */}
+        <main className="flex-1 p-8 md:p-12">
+          <div className="mb-8">
+            <h1 className="font-display text-2xl md:text-3xl font-bold text-warm-900 mb-2">Good morning, {user?.email?.split('@')[0] || 'Parent'}</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+              {stats.map(stat => (
+                <div key={stat.label} className="bg-white border border-warm-200 rounded-2xl p-6 flex flex-col items-center shadow-warm-sm">
+                  <div className="font-display text-2xl font-bold text-teal-700 mb-1">{stat.value}</div>
+                  <div className="text-warm-400 text-sm font-medium">{stat.label}</div>
+                  {stat.label === 'Unread Messages' && stat.value > 0 && (
+                    <span className="ml-2 bg-teal-600 text-white text-xs rounded-full px-2 py-0.5 font-semibold">{stat.value}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mb-10">
+            <h2 className="font-display text-xl font-bold text-warm-900 mb-4">Recently Viewed Sitters</h2>
+            <div className="flex gap-6">
+              {recentlyViewed.map(s => (
+                <div key={s.id} className="bg-white border border-warm-200 rounded-2xl p-4 flex flex-col items-center w-40 shadow-warm-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-700 to-teal-400 flex items-center justify-center font-display font-bold text-white mb-2">{s.name[0]}</div>
+                  <div className="font-display font-semibold text-warm-900">{s.name}</div>
+                  <div className="text-warm-400 text-xs">{s.city}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="font-display text-xl font-bold text-warm-900 mb-4">Active Conversations</h2>
+            <div className="flex flex-col gap-4">
+              {activeConvos.map(c => (
+                <div key={c.id} className="bg-white border border-warm-200 rounded-2xl p-4 flex items-center gap-4 shadow-warm-sm">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-teal-700 to-teal-400 flex items-center justify-center font-display font-bold text-white">{c.name[0]}</div>
+                  <div className="flex-1">
+                    <div className="font-display font-semibold text-warm-900">{c.name}</div>
+                    <div className="text-warm-400 text-xs truncate">{c.last}</div>
+                  </div>
+                  {c.unread > 0 && <span className="bg-teal-600 text-white text-xs rounded-full px-2 py-0.5 font-semibold">{c.unread}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </main>
       </div>
     </>
   );
