@@ -5,7 +5,7 @@ import { useAuthStore } from './stores/authStore';
 import MessageBubble from './components/MessageBubble';
 import LoadingSpinner from './components/LoadingSpinner';
 
-const SOCKET_URL = 'http://localhost:8080/ws';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:8080/ws';
 const MESSAGE_TOPIC = '/topic/messages';
 const SEND_ENDPOINT = '/app/chat.sendMessage';
 
