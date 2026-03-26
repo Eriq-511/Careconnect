@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import LoadingSpinner from '../components/LoadingSpinner';
-import ChatWindow from '../components/ChatWindow';
+import MessageWindow from '../components/ChatWindow';
 import { useAuthStore } from '../stores/authStore';
 
 export default function MessagesPage() {
@@ -51,7 +51,7 @@ export default function MessagesPage() {
         </div>
       </div>
       <div className="flex-1">
-        {loading ? <LoadingSpinner /> : <ChatWindow messages={messages} onSend={handleSend} currentUserId={user?.id} />}
+        {loading ? <LoadingSpinner /> : <MessageWindow messages={messages} onSend={handleSend} currentUserId={user?.id} />}
       </div>
     </div>
   );

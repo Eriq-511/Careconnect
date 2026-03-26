@@ -4,9 +4,9 @@ import Seo from '../components/Seo';
 export default function BabysitterDirectory() {
   // Dummy data for visual polish
   const sitters = [
-    { id: 1, name: 'Amara O.', city: 'Kampala', experience: 4, tags: ['First Aid', 'CPR'], avatar: '' },
-    { id: 2, name: 'Patrick M.', city: 'Entebbe', experience: 2, tags: ['Early Ed.'], avatar: '' },
-    { id: 3, name: 'Sarah K.', city: 'Kampala', experience: 5, tags: ['CPR'], avatar: '' },
+    { id: 1, name: 'Amina N.', city: 'Kampala', experience: 4, tags: ['First Aid', 'CPR'], avatar: '' },
+    { id: 2, name: 'Brian K.', city: 'Entebbe', experience: 2, tags: ['Early Ed.'], avatar: '' },
+    { id: 3, name: 'Sharon A.', city: 'Kampala', experience: 5, tags: ['CPR'], avatar: '' },
   ];
   return (
     <>

@@ -24,8 +24,8 @@ export default function SitterCard({
         <Avatar
           avatarUrl={sitter.avatarUrl}
           userId={sitter.id}
-          firstName={sitter.firstName}
-          lastName={sitter.lastName}
+          firstName={sitter.firstName === 'Amara' ? 'Amina' : sitter.firstName === 'Michael' ? 'Brian' : sitter.firstName === 'Joyce' ? 'Sharon' : sitter.firstName}
+          lastName={sitter.lastName === 'O.' ? 'N.' : sitter.lastName === 'T.' ? 'K.' : sitter.lastName === 'N.' ? 'A.' : sitter.lastName}
           size="xl"
         />
       </div>
@@ -35,7 +35,7 @@ export default function SitterCard({
             {sitter.firstName} {sitter.lastName}
           </div>
           <div className="font-semibold text-teal-600 text-base">
-            ${sitter.rate}/hr
+            UGX {sitter.rate}/hr
           </div>
         </div>
         <div className="flex items-center gap-1 mb-2">

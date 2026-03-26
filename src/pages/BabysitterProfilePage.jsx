@@ -26,14 +26,14 @@ export default function BabysitterProfilePage() {
     verified: true,
     rating: 4.9,
     reviews: 23,
-    rate: 10,
+     rate: 30000,
     experience: 4,
     tags: ['First Aid', 'CPR', '4+ yrs exp', 'Early Ed.'],
     payment: ['Mobile Money', 'Cash'],
     documents: { id: true, cv: true },
     languages: ['English', 'Luganda'],
     avatarUrl: '',
-    bio: 'Caring, experienced babysitter with a passion for early childhood education.',
+     bio: 'Experienced babysitter with a passion for early childhood development.',
   };
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function BabysitterProfilePage() {
         </div>
         {sitter.verified && <span className="bg-teal-50 text-teal-700 border border-teal-200 text-xs font-semibold px-3 py-1 rounded-full inline-flex items-center gap-1 mb-2">✓ Verified</span>}
         <div className="border-t border-warm-100 w-full my-4" />
-        <div className="text-warm-900 font-semibold mb-1">Rate: <span className="text-teal-700">${sitter.rate} / hour</span></div>
+        <div className="text-warm-900 font-semibold mb-1">Rate: <span className="text-teal-700">UGX {sitter.rate} / hr</span></div>
         <div className="text-warm-400 text-sm mb-1">Experience: {sitter.experience} years</div>
         <button className="w-full bg-teal-600 text-white rounded-xl px-4 py-3 font-semibold hover:bg-teal-700 transition-all mt-4">Message {sitter.firstName} →</button>
       </aside>

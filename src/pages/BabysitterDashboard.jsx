@@ -15,12 +15,12 @@ export default function BabysitterDashboard() {
     { label: 'Profile Completion', value: '92%' },
   ];
   const whoViewed = [
-    { id: 1, name: 'Jane P.', time: '2h ago', city: 'Kampala' },
-    { id: 2, name: 'Mark L.', time: '1d ago', city: 'Entebbe' },
+    { id: 1, name: 'Nabirye A.', time: '2h ago', city: 'Kampala' },
+    { id: 2, name: 'Okello M.', time: '1d ago', city: 'Entebbe' },
   ];
   const recentMessages = [
-    { id: 1, name: 'Sarah K.', last: 'Thank you!', unread: 0 },
-    { id: 2, name: 'Patrick M.', last: 'Can you babysit Friday?', unread: 1 },
+    { id: 1, name: 'Sharon A.', last: 'Thank you!', unread: 0 },
+    { id: 2, name: 'Brian K.', last: 'Can you babysit Friday?', unread: 1 },
   ];
   // Simulate verification status
   const verification = 'approved'; // 'pending' | 'approved' | 'rejected'

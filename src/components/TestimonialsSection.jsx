@@ -26,7 +26,7 @@ const TESTIMONIALS = [
   {
     name: 'Patrick M.',
     role: 'Parent, 3 children, Entebbe',
-    quote: 'We found the perfect sitter for our family. The chat and reviews made it easy to decide.',
+    quote: 'We found the perfect sitter for our family. The messaging and reviews made it easy to decide.',
     rating: 5,
     id: 'patrick2',
     firstName: 'Patrick',

@@ -19,8 +19,8 @@ export default function ParentProfilePage() {
   // Dummy parent data for visual structure
   const parent = {
     id: 'parent1',
-    firstName: 'Sarah',
-    lastName: 'K.',
+    firstName: 'Nabirye',
+    lastName: 'A.',
     city: 'Kampala',
     country: 'Uganda',
     avatarUrl: '',

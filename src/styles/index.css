@@ -11,16 +11,17 @@
 @tailwind utilities;
 
 :root {
-  /* Primary — Deep Forest Teal */
-  --teal-900: #0D3B38;
-  --teal-800: #134E4A;
-  --teal-700: #1A6B66;
-  --teal-600: #0F766E;
-  --teal-500: #14B8A6;
-  --teal-400: #2DD4BF;
-  --teal-200: #99F6E4;
-  --teal-100: #CCFBF1;
-  --teal-50:  #F0FDFA;
+
+  /* Primary — Synergy Blue */
+  --primary-900: #1E3A8A;
+  --primary-800: #1E40AF;
+  --primary-700: #1D4ED8;
+  --primary-600: #2563EB;
+  --primary-500: #3B82F6;
+  --primary-400: #60A5FA;
+  --primary-200: #BFDBFE;
+  --primary-100: #DBEAFE;
+  --primary-50:  #F0F6FF;
 
   /* Warm Neutrals */
   --warm-50:  #FDFAF7;
@@ -59,9 +60,38 @@
 
   /* Transitions */
   --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+/* Synergy Blue Utility Overrides for Tailwind classes */
+.bg-teal-50, .bg-emerald-50, .bg-green-50 { background-color: var(--primary-50) !important; }
+.bg-teal-100, .bg-emerald-100, .bg-green-100 { background-color: var(--primary-100) !important; }
+.bg-teal-200, .bg-emerald-200, .bg-green-200 { background-color: var(--primary-200) !important; }
+.bg-teal-400, .bg-emerald-400, .bg-green-400 { background-color: var(--primary-400) !important; }
+.bg-teal-600, .bg-emerald-600, .bg-green-600 { background-color: var(--primary-600) !important; }
+.bg-teal-700, .bg-emerald-700, .bg-green-700 { background-color: var(--primary-700) !important; }
+.bg-teal-800, .bg-emerald-800, .bg-green-800 { background-color: var(--primary-800) !important; }
+.bg-teal-900, .bg-emerald-900, .bg-green-900 { background-color: var(--primary-900) !important; }
 }
+.text-teal-50, .text-emerald-50, .text-green-50 { color: var(--primary-50) !important; }
+.text-teal-100, .text-emerald-100, .text-green-100 { color: var(--primary-100) !important; }
+.text-teal-200, .text-emerald-200, .text-green-200 { color: var(--primary-200) !important; }
+.text-teal-400, .text-emerald-400, .text-green-400 { color: var(--primary-400) !important; }
+.text-teal-600, .text-emerald-600, .text-green-600 { color: var(--primary-600) !important; }
+.text-teal-700, .text-emerald-700, .text-green-700 { color: var(--primary-700) !important; }
+.text-teal-800, .text-emerald-800, .text-green-800 { color: var(--primary-800) !important; }
+.text-teal-900, .text-emerald-900, .text-green-900 { color: var(--primary-900) !important; }
 
+.border-teal-50, .border-emerald-50, .border-green-50 { border-color: var(--primary-50) !important; }
+.border-teal-100, .border-emerald-100, .border-green-100 { border-color: var(--primary-100) !important; }
+.border-teal-200, .border-emerald-200, .border-green-200 { border-color: var(--primary-200) !important; }
+.border-teal-400, .border-emerald-400, .border-green-400 { border-color: var(--primary-400) !important; }
+.border-teal-600, .border-emerald-600, .border-green-600 { border-color: var(--primary-600) !important; }
+.border-teal-700, .border-emerald-700, .border-green-700 { border-color: var(--primary-700) !important; }
+.border-teal-800, .border-emerald-800, .border-green-800 { border-color: var(--primary-800) !important; }
+.border-teal-900, .border-emerald-900, .border-green-900 { border-color: var(--primary-900) !important; }
 body {
+.from-teal-700, .from-emerald-700, .from-green-700 { --tw-gradient-from: var(--primary-700) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(29,78,216,0)); }
+.to-teal-400, .to-emerald-400, .to-green-400 { --tw-gradient-to: var(--primary-400) !important; }
+.from-teal-900, .from-emerald-900, .from-green-900 { --tw-gradient-from: var(--primary-900) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(30,58,138,0)); }
+.to-teal-700, .to-emerald-700, .to-green-700 { --tw-gradient-to: var(--primary-700) !important; }
   font-family: var(--font-body);
   background: var(--warm-50);
   color: var(--warm-700);

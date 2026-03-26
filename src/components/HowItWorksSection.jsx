@@ -10,7 +10,7 @@ const TABS = [
     steps: [
       { num: 1, title: 'Create Account', desc: 'Sign up and set your preferences.' },
       { num: 2, title: 'Browse Sitters', desc: 'Explore verified babysitters near you.' },
-      { num: 3, title: 'Message & Hire', desc: 'Chat securely and book your sitter.' },
+      { num: 3, title: 'Message & Hire', desc: 'Message securely and book your sitter.' },
     ],
   },
   {

@@ -12,7 +12,7 @@ const BADGES = [
   {
     icon: Lock,
     title: 'Secure Messaging',
-    desc: 'Encrypted, in-platform chat',
+    desc: 'Encrypted, in-platform messaging',
   },
   {
     icon: FileCheck2,
@@ -21,7 +21,7 @@ const BADGES = [
   },
   {
     icon: Zap,
-    title: 'Real-Time Chat',
+    title: 'Real-Time Messaging',
     desc: 'Instant WebSocket messaging',
   },
 ];

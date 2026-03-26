@@ -10,7 +10,17 @@ module.exports = {
         body:    ['DM Sans', 'system-ui', 'sans-serif'],
       },
       colors: {
-        teal:  { 50:'#F0FDFA', 100:'#CCFBF1', 200:'#99F6E4', 400:'#2DD4BF', 500:'#14B8A6', 600:'#0F766E', 700:'#1A6B66', 800:'#134E4A', 900:'#0D3B38' },
+        primary: {
+          50:  '#F0F6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          400: '#60A5FA',
+          500: '#3B82F6',
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#1E3A8A',
+        },
         warm:  { 50:'#FDFAF7', 100:'#F5F0E8', 200:'#E8DDD0', 400:'#A89580', 700:'#5C4A3A', 900:'#2C1F12' },
         amber: { DEFAULT:'#F59E0B', light:'#FEF3C7' },
       },

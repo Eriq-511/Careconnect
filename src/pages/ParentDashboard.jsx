@@ -14,13 +14,13 @@ export default function ParentDashboard() {
     { label: 'Unread Messages', value: 2 },
   ];
   const recentlyViewed = [
-    { id: 'amara1', name: 'Amara O.', city: 'Kampala' },
-    { id: 'patrick2', name: 'Patrick M.', city: 'Entebbe' },
-    { id: 'sarah3', name: 'Sarah K.', city: 'Kampala' },
+    { id: 'amina1', name: 'Amina N.', city: 'Kampala' },
+    { id: 'brian2', name: 'Brian K.', city: 'Entebbe' },
+    { id: 'sharon3', name: 'Sharon A.', city: 'Kampala' },
   ];
   const activeConvos = [
-    { id: 1, name: 'Amara O.', last: 'See you at 6pm!', unread: 1 },
-    { id: 2, name: 'Sarah K.', last: 'Thank you!', unread: 0 },
+    { id: 1, name: 'Amina N.', last: 'See you at 6pm!', unread: 1 },
+    { id: 2, name: 'Sharon A.', last: 'Thank you!', unread: 0 },
   ];
 
   useEffect(() => {

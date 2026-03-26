@@ -14,7 +14,7 @@ const dummyMessages = [
   { id: 3, senderId: 'me', content: 'Yes, I am! What times do you need?', status: 'SEEN' },
 ];
 
-export default function ChatWindow({ messages = dummyMessages, onSend, currentUserId = 'me', conversations = dummyConversations, onSelectConversation, selectedConversationId }) {
+export default function MessageWindow({ messages = dummyMessages, onSend, currentUserId = 'me', conversations = dummyConversations, onSelectConversation, selectedConversationId }) {
   const [input, setInput] = React.useState('');
   const [selectedId, setSelectedId] = React.useState(selectedConversationId || conversations[0]?.id);
 
@@ -42,7 +42,7 @@ export default function ChatWindow({ messages = dummyMessages, onSend, currentUs
           ))}
         </div>
       </aside>
-      {/* Main chat area */}
+      {/* Main message area */}
       <main className="flex-1 flex flex-col">
         <div className="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-2">
           {messages.map((msg, idx) => (

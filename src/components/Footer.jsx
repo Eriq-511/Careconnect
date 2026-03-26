@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom';
 
 const PLATFORM = [
   { label: 'How It Works', to: '/#how-it-works' },
-  { label: 'Browse Sitters', to: '/sitters' },
+  { label: 'Browse Sitters', to: '/directory' },
   { label: 'Become a Sitter', to: '/signup?sitter=1' },
-  { label: 'Admin Login', to: '/admin/login' },
+  { label: 'Admin Login', to: '/login' },
 ];
 const COMPANY = [
   { label: 'About Us', to: '/about' },
-  { label: 'Safety', to: '/#safety' },
+  // Safety section anchor only if it exists on landing page, else remove or comment out
+  // { label: 'Safety', to: '/#safety' },
   { label: 'Contact', to: '/contact' },
 ];
 const LEGAL = [
