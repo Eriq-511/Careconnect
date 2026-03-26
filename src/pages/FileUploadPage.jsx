@@ -3,6 +3,7 @@ import FileUpload from '../components/FileUpload';
 import { uploadFile } from '../api/api';
 import NotificationBanner from '../components/NotificationBanner';
 
+export default function FileUploadPage() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
