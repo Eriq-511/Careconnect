@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SockJS from 'sockjs-client';
-import * as Stomp from '@stomp/stompjs';
+import { Client } from '@stomp/stompjs';
 import { useAuthStore } from './stores/authStore';
 import MessageBubble from './components/MessageBubble';
 import LoadingSpinner from './components/LoadingSpinner';
@@ -19,18 +19,22 @@ export default function ChatWidget() {
 
   useEffect(() => {
     setLoading(true);
-    const socket = new SockJS(SOCKET_URL);
-    stompClient.current = Stomp.over(socket);
-    stompClient.current.connect({}, () => {
-      stompClient.current.subscribe(MESSAGE_TOPIC, (msg) => {
-        const message = JSON.parse(msg.body);
-        setMessages((prev) => [...prev, message]);
+    const client = new Client({
+      webSocketFactory: () => new SockJS(SOCKET_URL),
+      reconnectDelay: 5000,
+      onConnect: () => {
+        client.subscribe(MESSAGE_TOPIC, (msg) => {
+          const message = JSON.parse(msg.body);
+          setMessages((prev) => [...prev, message]);
+          setLoading(false);
+        });
         setLoading(false);
-      });
-      setLoading(false);
+      },
     });
+    client.activate();
+    stompClient.current = client;
     return () => {
-      if (stompClient.current) stompClient.current.disconnect();
+      if (stompClient.current) stompClient.current.deactivate();
     };
   }, []);
 
@@ -55,7 +59,7 @@ export default function ChatWidget() {
         senderId: user.id,
         status: 'DELIVERED',
       };
-      stompClient.current.send(SEND_ENDPOINT, {}, JSON.stringify(message));
+      stompClient.current.publish({ destination: SEND_ENDPOINT, body: JSON.stringify(message) });
       setInput('');
     }
   };
