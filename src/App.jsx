@@ -18,6 +18,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import BabysitterDashboard from './pages/BabysitterDashboard';
+import NotFound from './pages/NotFound';
 import ParentDashboard from './pages/ParentDashboard';
 import ParentProfilePage from './pages/ParentProfilePage';
 import BabysitterProfilePage from './pages/BabysitterProfilePage';
