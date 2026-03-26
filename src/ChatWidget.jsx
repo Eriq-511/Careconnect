@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import SockJS from 'sockjs-client';
-import * as Stomp from '@stomp/stompjs';
+import Stomp from '@stomp/stompjs';
 import { useAuthStore } from './stores/authStore';
 import MessageBubble from './components/MessageBubble';
 import LoadingSpinner from './components/LoadingSpinner';
